@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Lista de Blogs</h2>
+    {% if blogs %}
+        <ul class="blog-list">
+            {% for blog in blogs %}
+                <li>
+                    <h3>{{ blog.title }}</h3>
+                    <p>{{ blog.subtitle }}</p>
+                    <p><strong>Autor:</strong> {{ blog.author }}</p>
+                    <p><strong>Fecha:</strong> {{ blog.date }}</p>
+                    <a href="{% url 'blog_detail' blog.pk %}" class="btn btn-primary">Leer más</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay blogs disponibles.</p>
+    {% endif %}
+</div>
+{% endblock content %}

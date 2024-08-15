@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog - {% block title %}{% endblock %}{% endblock %}
+
+{% block content %}
+<div class="blog-container">
+    {% block blog_content %}
+    <!-- Contenido específico del blog -->
+    {% endblock %}
+</div>
+{% endblock %}
